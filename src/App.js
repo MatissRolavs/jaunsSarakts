@@ -1,8 +1,8 @@
 
 import './App.css';
-
+import Completed from "./Completed.js";
 function App() {
-  const users = [{
+  const allUsers = [{
     userId: 1,
     id: 1,
     title: "delectus aut autem",
@@ -38,9 +38,11 @@ function App() {
     title: "qui ullam ratione quibusdam voluptatem quia omnis",
     completed: false
   }];
-  
+  const usersJSX = allUsers.map((user,index) => {
+    return <Completed key={index} userId={user.userId} id={user.id} title={user.title} completed={user.completed}/>
+})
   return (
-    <><p>yo</p></>
+    <>{usersJSX}</>
   );
 }
 
